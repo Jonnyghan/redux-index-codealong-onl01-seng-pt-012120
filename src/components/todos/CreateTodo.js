@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Todo from './Todo'
 
 class CreateTodo extends Component {
 
@@ -13,7 +14,11 @@ class CreateTodo extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
+    this.setState({
+      text: '',
+    })
   }
+   
 
   handleChange(event) {
     this.setState({
